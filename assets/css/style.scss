@@ -1,0 +1,824 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import "./variable.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #f2f2f2;
+  font-family: $primaryFont;
+}
+p {
+  margin: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  li {
+    list-style: none;
+  }
+}
+a {
+  text-decoration: none;
+}
+img,video{
+  max-width: 100%;
+}
+.xyz{
+  font-size: 2 * $rem;
+  background-size: 100% 100%;
+  @media (max-width: map-get($mediaSizes, "lg")) {
+    font-size: $rem;
+  }
+}
+.container{
+  max-width: 1440px;
+  @media (max-width: map-get($mediaSizes, "xxl")) {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+}
+.headerInfo{
+  padding: 48px 0 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;  
+  .navbar-toggler{
+    font-family:'FontAwesome';
+    color: $gray;
+    font-size: 3 * $rem;
+    padding: 0;
+    outline: none;
+    border: none;
+    &:focus,&:active{
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+    i{
+      font-style: inherit;
+    }
+    @media(max-width: map-get($mediaSizes , "xs")){
+      margin-top: 30px;
+    }
+  }
+  .hdrNav{
+    .navbar-nav{      
+      .nav-item{
+        margin: 0 30px 0 0;
+        &:last-child{
+          margin: 0;
+        }
+        @media(max-width: map-get($mediaSizes , "xxl")){
+          margin: 0 20px 0 0;   
+        }
+        @media(max-width: map-get($mediaSizes , "xl")){
+          margin: 0 18px 0 0;           
+        }
+        @media(max-width: map-get($mediaSizes , "lg")){
+          margin: 0;
+          border-top: 1px solid #909090;
+          &:first-child{
+            border: none;
+          }
+        }
+        .nav-link{
+          padding: 0;
+          font-size: 3 * $rem;
+          font-weight: $semibold;
+          color: $gray;
+          &.active,&:hover{
+            color: $active;
+          }
+          &.dropdown-toggle::after{
+            // background: url('../images/after-arrow.svg') no-repeat center;
+            content: '\f107';
+            font-family:"Font Awesome 5 Free";font-weight: 900;
+            border: none;            
+            vertical-align: middle;
+            margin-left: 0;
+            font-size: 2.5 * $rem;
+            @media(max-width: map-get($mediaSizes , "lg")){
+              float: right;
+            }
+          }
+          @media(max-width: map-get($mediaSizes , "xxl")){
+            font-size: 2.75 * $rem;    
+          }
+          @media(max-width: map-get($mediaSizes , "xl")){
+            font-size: 2.25 * $rem;             
+          }
+          @media(max-width: map-get($mediaSizes , "lg")){
+            font-size: 2.25 * $rem; 
+            color: $darkgray; 
+            padding: 8px;    
+            &:hover,&.active{
+              background-color: $active;
+              color: $gray;
+            }       
+          }
+        }
+      }
+      .dropdown-menu{
+        background-color: $gray;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        li{
+          border-top: 1px solid #909090;
+          &:first-child{
+            border: none;
+          }
+          a{
+            background-color: transparent;
+            padding: 8px 10px;
+            font-size: 2 * $rem;
+            color: $darkgray;
+            font-weight: $semibold;
+            &:hover,&.active{
+              background-color: $active;
+              color: $gray;
+            }        
+            @media(max-width: map-get($mediaSizes , "lg")){
+              padding: 8px 10px 8px 25px;
+            }                
+          }
+        }  
+        @media(max-width: map-get($mediaSizes , "lg")){
+          background-color: transparent;
+          width: 100%;
+          border-radius: 0;
+          padding: 0;
+          box-shadow: none;
+          border: 0;        
+          margin: 0;  
+        }     
+      }
+      @media(max-width: map-get($mediaSizes , "lg")){
+        justify-content: flex-start !important;
+
+      }
+    }    
+  }
+  .hdrUsers{
+    a{
+      font-size: 3 * $rem;
+      font-weight: $semibold;
+      color: #757575;
+      margin: 0 30px 0 0;
+      &:last-child{
+        margin: 0;
+      }
+      &:hover{
+        color: $active;
+      }
+      &.pxbtn{
+        color: $white;
+        background-color: $active;
+        padding: 12px 40px;
+        border-radius: 10px;
+        @media(max-width: map-get($mediaSizes , "xxl")){
+          padding: 10px 35px;   
+        }
+        @media(max-width: map-get($mediaSizes , "xl")){
+          padding: 10px 25px; 
+        }
+        @media(max-width: map-get($mediaSizes , "lg")){
+          padding: 6px 20px; 
+        }
+        @media(max-width: map-get($mediaSizes , "lg")){
+          padding: 5px 10px; 
+          border-radius: 6px;
+        }
+      }
+      @media(max-width: map-get($mediaSizes , "xxl")){
+        font-size: 2.75 * $rem;    
+      }
+      @media(max-width: map-get($mediaSizes , "xl")){
+        font-size: 2.25 * $rem;  
+        margin: 0 15px 0 0;  
+      }
+      @media(max-width: map-get($mediaSizes , "sm")){
+        margin: 0 10px 0 0;  
+      }
+    }
+    @media(max-width: map-get($mediaSizes , "xl")){
+      margin: 0 20px 0 0;
+    }
+    @media(max-width: map-get($mediaSizes , "xs")){
+      margin: 30px 0 0 auto;
+      order: 2;
+    }
+  }  
+  @media(max-width: map-get($mediaSizes , "lg")){
+    #logo{margin-right: auto;}    
+    .navbar-collapse{
+      width: 300px;
+      background-color: $gray; 
+      border-top: 5px solid $active;
+      box-shadow: 0 0 5px rgb(0 0 0 / 40%);
+      margin: 20px 0 0 0;
+      z-index: 999;      
+      position: absolute;
+      top: 100%;
+      right: 0;
+      .navbar-nav{
+        padding: 10px;
+               
+      }
+    }           
+  }
+  @media(max-width: map-get($mediaSizes , "xs")){
+    padding: 30px 0 0 0;
+    #logo{text-align: center;width: 100%;}
+    .navbar-collapse{width: 100%;}
+  }
+}
+// Banner section
+.banner{
+  background: url('../images/banner-bg.jpg') no-repeat top center;
+  background-size: cover;
+  padding: 36.25 * $rem 0 18.75 * $rem 0;
+  overflow: hidden;
+  .bannerDetails{
+    width: 56%;
+    h1{
+      font-size: 7.625 * $rem;
+      font-style: italic;
+      color: $white;
+      line-height: 9.75 * $rem;
+      font-weight: $light;
+      margin: 0;
+      span{
+        font-family: 'Kalam', cursive;
+        font-weight: $bold;
+      }
+      @media(max-width: map-get($mediaSizes , "xxl")){
+        font-size: 6.75 * $rem;
+        line-height: 8.75 * $rem;
+      }
+      @media(max-width: map-get($mediaSizes , "xl")){
+        font-size: 5.25 * $rem;
+        line-height: 7.75 * $rem;
+      }
+      @media(max-width: map-get($mediaSizes , "md")){
+        font-size: 4.75 * $rem;
+        line-height: 6.25 * $rem;
+      }
+      @media(max-width: map-get($mediaSizes , "xs")){
+        font-size: 3.5 * $rem;
+        line-height: 5 * $rem;
+      }
+    }
+    p{
+      font-size: 3 * $rem;
+      color: $white;
+      line-height: 38px;
+      padding: 40px 0 0 0;
+      margin: 40px 0 0 0;
+      position: relative;
+      &::before{
+        content: '';
+        background-color: $active;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 65px;
+        height: 6px;
+      }
+      @media(max-width: map-get($mediaSizes , "xl")){
+        font-size: 2.25 * $rem;
+        line-height: 4 * $rem;
+        br{display: none;}
+        &::before{
+          right: 0;
+          margin: 0 auto;
+        }
+      }
+      @media(max-width: map-get($mediaSizes , "sm")){
+        padding: 20px 0 0 0;
+        margin: 20px 0 0 0;
+        font-size: 2 * $rem;
+        line-height: 28px;
+      }
+    }
+    @media(max-width: map-get($mediaSizes , "lg")){
+      width: 100%;
+    }
+    @media(max-width: map-get($mediaSizes , "md")){      
+      margin: 0 0 40px 0;      
+    }
+  }
+  @media(max-width: map-get($mediaSizes , "xxl")){
+    background-position: 66% center;
+  }  
+  @media(max-width: map-get($mediaSizes , "xl")){
+    background-position: 65% center;
+    padding: 28.75 * $rem 0 15 * $rem 0;
+  }  
+  @media(max-width: map-get($mediaSizes , "lg")){    
+    padding: 23.75 * $rem 0 8.75 * $rem 0;
+  }  
+  @media(max-width: map-get($mediaSizes , "md")){  
+    background-image: none;  
+    padding: 20 * $rem 0 0 0;
+    text-align: center;
+    background-color: #111;
+    .bannerImg{
+      background-color: #232323;
+      position: relative;
+      z-index: 1;
+      padding: 40px 0 60px 0;
+      &::before{
+        content: " ";
+        background-color: #232323;
+        width: 10000px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+      }
+      &::after{
+        content: " ";
+        background-color: #232323;
+        width: 10000px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+  } 
+  @media(max-width: map-get($mediaSizes , "xs")){
+    padding: 23.75 * $rem 0 0 0;
+  }
+}
+
+// Our team section
+.OurTeam{
+  background-color: $darkgray;
+  padding: 140px 20px;
+  @media(max-width: map-get($mediaSizes , "xxl")){ 
+    padding: 120px 0;
+  }
+  @media(max-width: map-get($mediaSizes , "xl")){ 
+    padding: 100px 0;
+  }
+  @media(max-width: map-get($mediaSizes , "lg")){ 
+    padding: 70px 0;
+  }
+  @media(max-width: map-get($mediaSizes , "md")){ 
+   padding: 60px 0;
+  }
+  @media(max-width: map-get($mediaSizes , "sm")){ 
+    padding: 20px 0 40px 0;
+  }
+  h2{
+    font-size: 5.625 * $rem;
+    font-weight: $bold;
+    color: $white;
+    margin: 0 0 30px 0;
+    padding: 0 0  30px 0;
+    position: relative;
+    &::after{
+      content: '';
+      background-color: $active;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 65px;
+      height: 6px;
+      margin: 0 auto;
+    }
+    @media(max-width: map-get($mediaSizes , "xl")){ 
+     font-size: 5 * $rem;
+    }
+    @media(max-width: map-get($mediaSizes , "md")){ 
+      font-size: 4.5 * $rem;
+    }
+    @media(max-width: map-get($mediaSizes , "sm")){ 
+      font-size: 4 * $rem;
+    }
+  }
+  p{
+    font-size: 3.75 * $rem;
+    color: $white;
+    line-height: 48px;
+    margin: 0;
+    @media(max-width: map-get($mediaSizes , "xxl")){ 
+      font-size: 3.25 * $rem;
+      line-height: 42px;
+    }
+    @media(max-width: map-get($mediaSizes , "xl")){ 
+      font-size: 2.75 * $rem;
+      line-height: 36px;
+      br{
+        display: none;
+      }
+    }
+    @media(max-width: map-get($mediaSizes , "lg")){ 
+      font-size: 2.25 * $rem;
+      line-height: 32px;
+    }
+    @media(max-width: map-get($mediaSizes , "sm")){ 
+      font-size: 2 * $rem;
+      line-height: 28px;
+    }
+  }
+  .teamInfo{
+    padding: 100px 0 0 0;
+    @media(max-width: map-get($mediaSizes , "lg")){ 
+      padding: 70px 0 0 0;
+    }
+    @media(max-width: map-get($mediaSizes , "md")){ 
+      padding: 40px 0 0 0;
+    }
+    ul{
+      li{
+        position: relative;
+        &:nth-child(2),&:nth-child(5),&:nth-child(8){
+          margin-top: 130px;
+        }
+        @media(max-width: map-get($mediaSizes , "xl")){
+          &:nth-child(2),&:nth-child(5),&:nth-child(8){
+            margin-top: 100px;
+          }
+        }
+        @media(max-width: map-get($mediaSizes , "lg")){
+          margin: 0 0 40px 0;
+          &:nth-child(2),&:nth-child(5),&:nth-child(8){
+            margin-top: 0;
+          }
+        }
+        .memberImg{
+          position: relative;
+          z-index: 9;          
+          &::before{
+            content: '';
+            background-color: #181818;
+            width: 186px;
+            height: 323px;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            z-index: -1;
+          }
+          &::after{
+            content: '';
+            background-color: $active;
+            width: 80px;
+            height: 143px;
+            position: absolute;
+            bottom: 50px;
+            right: -10px;
+            z-index: -1;
+          }
+          @media(max-width: map-get($mediaSizes , "xxl")){
+            margin: 0 20px;
+            &::before{
+              height: 270px;
+            }
+          }
+          @media(max-width: map-get($mediaSizes , "xl")){            
+            &::before{
+              height: 220px;
+            }
+            &:after{
+              height: 100px;
+            }
+          }
+          @media(max-width: map-get($mediaSizes , "md")){            
+            &::before{
+              height: 170px;
+            }
+            &:after{
+              height: 80px;
+            }
+          }
+        }
+        &:hover .memberDeatils{
+          transform: translate(0, -40px);
+        }
+        &:hover .memberDeatils p{
+          display: block; color: $white;
+        }
+        &:hover .memberDeatils{
+          background-color: $active; 
+          z-index: 99;
+          &::before{display: none;}
+        }
+        &:hover .memberDeatils h3,&:hover .memberDeatils span{
+          color: $white;
+        }
+        &:hover .memberDeatils .memberSocial a, &:hover .memberDeatils .memberSocial a.twitter,  &:hover .memberDeatils .memberSocial a.linkdin{
+          color: $white;
+        }
+      }
+    }
+    .memberDeatils{
+      margin: 20px 0 0 0;
+      background-color: $white;
+      box-shadow: 0px 89.761px 145.862px rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      padding: 20px 40px;
+      position: relative;      
+      transition: transform 0.4s;     
+      &::before{
+        content: '';
+        background: url('../images/dotted.png');
+        position: absolute;
+        bottom: 100%;
+        left: 30px;
+        width: 97px;
+        height: 49px;
+      }      
+      p{
+        font-size: 2.5 * $rem;
+        line-height: 32px;
+        color: #3C405F;
+        margin: 0;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;    
+        @media(max-width: map-get($mediaSizes , "xl")){
+          font-size: 2.25 * $rem;
+          line-height: 28px;
+        }
+        @media(max-width: map-get($mediaSizes , "md")){ 
+          font-size: 2 * $rem;
+          line-height: 26px;
+        }
+        @media(max-width: map-get($mediaSizes , "sm")){ 
+          font-size: 1.75 * $rem;
+          line-height: 24px;
+        }
+      }
+      h3{
+        font-size: 2.5 * $rem;
+        font-weight: $semibold;
+        text-transform: uppercase;
+        @media(max-width: map-get($mediaSizes , "xxl")){ 
+          font-size: 2.25 * $rem;
+        }
+        @media(max-width: map-get($mediaSizes , "xl")){ 
+          font-size: 2 * $rem;
+          margin: 0 0 5px 0;
+        }
+        @media(max-width: map-get($mediaSizes , "sm")){ 
+          font-size: 1.75 * $rem;
+          margin: 0;
+        }
+      }
+      span{
+        font-size: 17.19px;
+        color: #9C9FBB;
+        @media(max-width: map-get($mediaSizes , "md")){ 
+          font-size: 14px;
+        }
+      }
+      .memberSocial{
+        margin: 0 0 0 10px;
+        a{
+          display: inline-block;
+          color: #1976D2;
+          margin: 0 15px 0 0;
+          font-size: 24px;
+          &:last-child{
+            margin: 0;
+          }
+          &.twitter{
+            color: #00BAF6;
+          }
+          &.linkdin{
+            color: #0077B5;
+          }
+          @media(max-width: map-get($mediaSizes , "xxl")){ 
+            font-size: 2.25 * $rem;
+          }
+          @media(max-width: map-get($mediaSizes , "xxl")){ 
+            margin: 0 10px 0 0;
+          }
+        }
+      }
+      @media(max-width: map-get($mediaSizes , "xxl")){ 
+        padding: 20px;
+        &::before{
+          left: 15px;
+        }
+      }
+    }
+  }
+}
+
+// footer section
+.footerInfo{
+  padding: 75px 60px;
+  background-color: #181818; 
+  p{
+    font-size: 2.5 * $rem;
+    color: $text;
+    margin: 0;
+  }
+  h3{
+    font-size: 2.75 * $rem;
+    font-weight: $medium;
+    color: $primary;
+    margin: 10px 0 48px 0;
+  }
+  ul{
+    li{
+      margin: 0 0 34px 0;
+      &:last-child{
+        margin: 0;
+      }
+      a{
+        display: inline-block;
+        font-size: 2.5 * $rem;
+        line-height: 3 * $rem;
+        color: $text;
+        transition: 1s;
+        &:hover{
+          color: $white;
+        }        
+      }
+    }
+  }
+  .footerAbout{
+    width: 25%;
+    h3{
+      margin: 0 0 20px 0;
+    }
+  }
+  .footerProduct{width: 8%;margin: 0 8% 0 9%;}
+  .footerTeam{width: 10%;}
+  .footerSolutions{width: 14%;margin: 0 7%;}
+  .footerResources{width: 13%;}
+  .ftrAddress{
+    padding: 80px 0;
+  }
+  .ftrSocial{
+    ul{
+      li{
+        margin: 0 20px 0 0;
+        &:last-child{
+          margin: 0;
+        }
+        a{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          background-color: #373C59;
+          border-radius: 50%;
+          font-size: 3 * $rem;
+          color: $white;
+          transition: 1s;
+          &.facebook{
+            align-items: end;
+            font-size: 3.75 * $rem;
+          }
+          &:hover{
+            background-color: $active;
+          }          
+        }
+      }
+    }
+  }
+  @media(max-width: map-get($mediaSizes , "xxxl")){
+    padding: 75px 30px;
+    .footerAbout {
+      width: 26%;
+    }
+    .footerProduct {
+      width: 11%;
+      margin: 0 5%;
+    }
+    .footerTeam {
+      width: 11%;
+    }
+    .footerResources {
+      width: 15%;
+    }
+    .footerSolutions {
+      width: 16%;
+      margin: 0 5%;
+    }
+  }
+  @media(max-width: map-get($mediaSizes , "xxl")){
+    p{
+      font-size: 2.25 * $rem;
+    }
+    .footerProduct{margin: 0 4%;}
+    .footerSolutions {
+      width: 18%;
+      margin: 0 4%;
+    }
+    .footerResources {
+      width: 17%;
+    }
+    ul{
+      li{
+        a{        
+          font-size: 2.25 * $rem;          
+        }
+      }
+    }
+  }
+  @media(max-width: map-get($mediaSizes , "xl")){
+    p{
+      font-size: 2.25 * $rem;
+    }
+    h3{
+      font-size: 2.5 * $rem;
+      margin: 10px 0 40px 0;
+    }
+    ul li {
+      margin: 0 0 24px 0;
+      a{
+        font-size: 2 * $rem;
+      }
+    }
+    .footerProduct{width: 13%;margin: 0 2%;}
+    .footerSolutions {
+      width: 22%;margin: 0 2%;
+    }
+    .footerResources {
+      width: 17%;
+    }
+    .footerTeam {
+      width: 14%;
+    }
+  }
+  @media(max-width: map-get($mediaSizes , "lg")){
+    .footerDetails{flex-wrap: wrap;}
+    ul li{
+      margin: 0 0 15px 0;
+    }
+    .footerAbout {
+      width: 100%;     
+      margin: 0 0 30px 0;      
+    }
+    .ftrAddress {
+      padding: 0 0 30px 0;
+    }
+    .footerProduct {
+      width: 17%;
+      margin: 0 4% 0 0;
+    }
+    .footerTeam {
+      width: 18%;
+    }
+    .footerSolutions {
+      width: 29%;margin: 0 4%;
+    }
+    .footerResources {
+      width: 24%;
+    }
+  }
+  @media(max-width: map-get($mediaSizes , "md")){
+    .footerTeam {
+      width: 50%;
+    }
+    .footerProduct {
+      width: 50%;margin: 0;
+    }
+    .footerSolutions,.footerResources {
+      width: 50%;
+      margin: 20px 0 0 0;
+    }
+    h3 {
+      font-size: 20px;
+      margin: 0 0 20px 0;
+    }
+    ul li {
+      margin: 0 0 10px 0;
+    }
+  }
+  @media(max-width: map-get($mediaSizes , "sm")){
+    padding: 60px 20px;
+    .ftrAddress {
+      padding: 20px 0;
+    }
+    .footerProduct ,.footerTeam,.footerSolutions,.footerResources{
+      width: 100%;
+    }
+    .footerProduct,.footerAbout {
+      margin: 0 0 20px 0;
+    }
+  }
+}
